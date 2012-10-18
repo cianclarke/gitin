@@ -1,0 +1,11 @@
+{
+  "name": "gitin",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node app",
+    "test" : "node test/tests.js"
+  },
+  "dependencies": {
+    "temp": "~0.4.0"
+  }
+}
