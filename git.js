@@ -30,8 +30,22 @@ module.exports = {
       return callback(null, repo);
     });
   },
-  pull : function(){
+  pull : function(project, callback){
+    var branch = project.branch || 'master',
+    cmd = "git pull origin " + branch.trim();
 
+    //TODO: Important!!! CHROOT this directory somehow...
+    exec(cmd, {
+      cwd: project.path
+    },  function (error, stdout, stderr) {
+      if (error !== null) {
+        return callback(error);
+      }
+      project.stdout = stdout;
+      project.stderr = stderr;
+
+      return callback(null, project);
+    });
   }
 };
 
