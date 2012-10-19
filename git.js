@@ -13,8 +13,6 @@ module.exports = {
     console.log("Cloning " + repo + " into " + repoPath),
     cmd = 'git clone --branch ' + branch + " " + repo + " .";
 
-
-    //TODO: Important!!! CHROOT this directory somehow...
     exec(cmd, {
       cwd: repoPath
     },  function (error, stdout, stderr) {
@@ -34,7 +32,6 @@ module.exports = {
     var branch = project.branch || 'master',
     cmd = "git pull origin " + branch.trim();
 
-    //TODO: Important!!! CHROOT this directory somehow...
     exec(cmd, {
       cwd: project.path
     },  function (error, stdout, stderr) {

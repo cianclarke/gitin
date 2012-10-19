@@ -6,9 +6,9 @@ git.clone({ url: 'https://github.com/cianclarke/met.git', branch: 'master' }, fu
   console.log(util.inspect(arguments));
   assert.ok(!err);
   assert.ok(project);
-  git.pull(res, function(err, res){
+  git.pull(project, function(err, res){
     console.log('pulld ');
     console.log(util.inspect(arguments));
   });
-})
+});
 
